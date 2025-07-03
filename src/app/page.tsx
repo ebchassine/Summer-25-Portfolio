@@ -12,14 +12,18 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("hero")
 
   const sections = [
+    { id: "home", label:"Home"},
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
+    
   ]
 
   const renderContent = () => {
     switch (activeSection) {
+      case "home":
+        return <Hero />
       case "experience":
         return <Experience />
       case "projects":
