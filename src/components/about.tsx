@@ -1,0 +1,68 @@
+"use client"
+
+import { motion } from "framer-motion"
+
+export default function About() {
+  return (
+    <div className="px-16 py-12">
+      <div className="max-w-6xl">
+        <h2 className="text-6xl font-serif font-bold mb-16 text-beige">About Me</h2>
+
+        <div className="flex flex-col lg:flex-row gap-12 mb-16">
+          <motion.div
+            className="lg:w-1/3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <img
+              src="/placeholder.svg?height=500&width=400"
+              alt="Profile"
+              className="rounded-2xl w-full h-auto shadow-lg"
+            />
+          </motion.div>
+
+          <motion.div
+            className="lg:w-2/3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-4xl font-bold mb-6 text-beige">My Story</h3>
+            <div className="space-y-6 text-2xl text-beige-light leading-relaxed">
+              <p>
+                I'm a passionate developer with over 5 years of experience in web development. I specialize in creating
+                responsive, user-friendly websites and applications that provide exceptional user experiences.
+              </p>
+              <p>
+                My journey in web development began during my university years when I discovered my passion for coding.
+                Since then, I've worked with various technologies and frameworks, always striving to stay updated with
+                the latest trends and best practices.
+              </p>
+              <p>
+                When I'm not coding, you can find me hiking, reading, or experimenting with new recipes. I believe in
+                continuous learning and enjoy tackling new challenges that push me to grow as a developer.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+          <h3 className="text-4xl font-bold mb-8 text-beige">Skills & Technologies</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS/SCSS", "Tailwind CSS", "Git"].map(
+              (skill, index) => (
+                <div
+                  key={index}
+                  className="bg-card-dark rounded-xl p-6 text-center text-2xl text-beige-muted border border-border-dark shadow-md hover:shadow-lg transition-shadow"
+                >
+                  {skill}
+                </div>
+              ),
+            )}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
