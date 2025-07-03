@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 * {
@@ -10,7 +11,7 @@ html,
 body {
   height: 100%;
   overflow: hidden;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Playfair Display", serif;
 }
 
 /* Remove any default margins/padding that might cause white frame */
@@ -36,14 +37,14 @@ body {
 }
 
 .content-container::-webkit-scrollbar-track {
-  background: rgb(50, 50, 55);
+  background: rgb(235, 225, 210);
 }
 
 .content-container::-webkit-scrollbar-thumb {
-  background: rgb(80, 80, 85);
+  background: rgb(150, 135, 120);
   border-radius: 4px;
 }
 
 .content-container::-webkit-scrollbar-thumb:hover {
-  background: rgb(100, 100, 105);
+  background: rgb(120, 105, 90);
 }

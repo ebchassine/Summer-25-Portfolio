@@ -29,26 +29,26 @@ export default function Experience() {
   ]
 
   return (
-    <div className="px-16 py-12">
-      <div className="max-w-5xl">
-        <h2 className="text-6xl font-serif font-bold mb-16 text-beige">Experience</h2>
-        <div className="space-y-12">
+    <div className="px-20 py-16 min-h-full">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-6xl font-serif font-bold mb-20 text-text-dark text-center">Experience</h2>
+        <div className="space-y-16">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="border border-border-dark rounded-xl p-8 shadow-lg bg-card-dark"
+              className="border border-border-beige rounded-2xl p-10 shadow-lg bg-card-beige"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
             >
-              <h3 className="text-4xl font-bold mb-3 text-beige">{exp.title}</h3>
-              <div className="flex items-center text-beige-muted mb-6 text-2xl">
-                <Building2 className="h-6 w-6 mr-3" />
-                <span className="mr-8">{exp.company}</span>
-                <Calendar className="h-6 w-6 mr-3" />
+              <h3 className="text-4xl font-bold mb-4 text-text-dark">{exp.title}</h3>
+              <div className="flex items-center text-text-medium mb-8 text-2xl">
+                <Building2 className="h-7 w-7 mr-4" />
+                <span className="mr-12">{exp.company}</span>
+                <Calendar className="h-7 w-7 mr-4" />
                 <span>{exp.period}</span>
               </div>
-              <p className="text-2xl text-beige-light leading-relaxed">{exp.description}</p>
+              <p className="text-2xl text-text-light leading-relaxed">{exp.description}</p>
             </motion.div>
           ))}
         </div>

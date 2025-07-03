@@ -4,13 +4,13 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <div className="px-16 py-12">
-      <div className="max-w-6xl">
-        <h2 className="text-6xl font-serif font-bold mb-16 text-beige">About Me</h2>
+    <div className="px-20 py-16 min-h-full">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-6xl font-serif font-bold mb-20 text-text-dark text-center">About Me</h2>
 
-        <div className="flex flex-col lg:flex-row gap-12 mb-16">
+        <div className="flex flex-col lg:flex-row gap-16 mb-20">
           <motion.div
-            className="lg:w-1/3"
+            className="lg:w-1/3 flex justify-center"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -18,7 +18,7 @@ export default function About() {
             <img
               src="/placeholder.svg?height=500&width=400"
               alt="Profile"
-              className="rounded-2xl w-full h-auto shadow-lg"
+              className="rounded-3xl w-full max-w-md h-auto shadow-xl"
             />
           </motion.div>
 
@@ -28,8 +28,8 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-4xl font-bold mb-6 text-beige">My Story</h3>
-            <div className="space-y-6 text-2xl text-beige-light leading-relaxed">
+            <h3 className="text-4xl font-bold mb-8 text-text-dark">My Story</h3>
+            <div className="space-y-8 text-2xl text-text-light leading-relaxed">
               <p>
                 I'm a passionate developer with over 5 years of experience in web development. I specialize in creating
                 responsive, user-friendly websites and applications that provide exceptional user experiences.
@@ -47,14 +47,19 @@ export default function About() {
           </motion.div>
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-          <h3 className="text-4xl font-bold mb-8 text-beige">Skills & Technologies</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="text-center"
+        >
+          <h3 className="text-4xl font-bold mb-12 text-text-dark">Skills & Technologies</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "CSS/SCSS", "Tailwind CSS", "Git"].map(
               (skill, index) => (
                 <div
                   key={index}
-                  className="bg-card-dark rounded-xl p-6 text-center text-2xl text-beige-muted border border-border-dark shadow-md hover:shadow-lg transition-shadow"
+                  className="bg-card-beige rounded-2xl p-8 text-center text-2xl text-text-medium border border-border-beige shadow-lg hover:shadow-xl transition-shadow"
                 >
                   {skill}
                 </div>

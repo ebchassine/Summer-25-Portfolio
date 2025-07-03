@@ -34,15 +34,15 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-screen bg-content-dark">
+    <div className="flex h-screen bg-content-beige">
       {/* Left Sidebar - 33% width */}
-      <div className="w-1/3 bg-sidebar-dark flex flex-col justify-center items-center border-r border-border-dark sidebar-container">
-        <nav className="space-y-12 text-center">
+      <div className="w-1/3 bg-sidebar-beige flex flex-col justify-center items-center sidebar-container">
+        <nav className="space-y-20 text-center">
           {sections.map((section) => (
             <div key={section.id} className="block">
               <button
                 onClick={() => setActiveSection(section.id)}
-                className={`text-7xl font-serif transition-all duration-300 hover:italic text-beige block w-full ${
+                className={`text-7xl font-serif hover:italic text-content-beige block w-full transition-all duration-0 ${
                   activeSection === section.id ? "font-bold" : "font-normal"
                 }`}
               >
@@ -54,7 +54,7 @@ export default function Home() {
       </div>
 
       {/* Right Content Area - 67% width */}
-      <div className="w-2/3 bg-content-dark content-container">
+      <div className="w-2/3 bg-content-beige content-container">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSection}

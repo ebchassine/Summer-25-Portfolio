@@ -25,14 +25,14 @@ export default function Projects() {
   ]
 
   return (
-    <div className="px-16 py-12">
-      <div className="max-w-6xl">
-        <h2 className="text-6xl font-serif font-bold mb-16 text-beige">Projects</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div className="px-20 py-16 min-h-full">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-6xl font-serif font-bold mb-20 text-text-dark text-center">Projects</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="rounded-2xl overflow-hidden shadow-lg group"
+              className="rounded-3xl overflow-hidden shadow-xl group"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
@@ -44,9 +44,9 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-8 bg-card-dark">
-                <h3 className="text-3xl font-bold mb-4 text-beige">{project.title}</h3>
-                <p className="text-xl text-beige-muted leading-relaxed">{project.description}</p>
+              <div className="p-10 bg-card-beige">
+                <h3 className="text-3xl font-bold mb-6 text-text-dark">{project.title}</h3>
+                <p className="text-xl text-text-light leading-relaxed">{project.description}</p>
               </div>
             </motion.div>
           ))}
