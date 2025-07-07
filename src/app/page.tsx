@@ -55,7 +55,7 @@ export default function Home() {
     <div className="flex h-screen bg-content-beige">
       {/* Left Sidebar - 33% width */}
       <div className="w-1/3 bg-sidebar-beige flex flex-col justify-center items-center sidebar-container">
-        <nav className="text-center" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+        <nav className="text-center" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {sections.map((section) => (
             <div key={section.id} className="block">
               <button
@@ -64,9 +64,9 @@ export default function Home() {
                 style={{
                   color: activeSection === section.id ? "rgb(180, 50, 50)" : "rgb(0, 0, 0)",
                 }}
-                className={`text-7xl font-serif hover:italic block w-full transition-all duration-50 font-normal hover:opacity-80 ${
-                  isTransitioning ? "pointer-events-none" : ""
-                }`}
+                className={`text-7xl font-serif hover:italic block w-full transition-all duration-50 font-normal hover:opacity-80 sidebar-corner-decoration ${
+                  activeSection === section.id ? "active" : ""
+                } ${isTransitioning ? "pointer-events-none" : ""}`}
               >
                 {section.label}
               </button>

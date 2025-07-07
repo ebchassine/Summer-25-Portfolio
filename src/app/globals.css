@@ -49,7 +49,7 @@ body {
   background: rgb(120, 105, 90);
 }
 
-/* Corner outline decorations */
+/* Corner outline decorations for section headers */
 .corner-decoration {
   position: relative;
 }
@@ -75,4 +75,47 @@ body {
   right: -10px;
   border-left: none;
   border-top: none;
+}
+
+/* Corner outline decorations for sidebar navigation */
+.sidebar-corner-decoration {
+  position: relative;
+}
+
+.sidebar-corner-decoration::before,
+.sidebar-corner-decoration::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid currentColor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-corner-decoration::before {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.sidebar-corner-decoration::after {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Show corner decorations on hover and active states */
+.sidebar-corner-decoration:hover::before,
+.sidebar-corner-decoration:hover::after,
+.sidebar-corner-decoration.active::before,
+.sidebar-corner-decoration.active::after {
+  opacity: 0.7;
+}
+
+.sidebar-corner-decoration.active::before,
+.sidebar-corner-decoration.active::after {
+  opacity: 1;
 }
