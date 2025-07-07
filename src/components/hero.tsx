@@ -18,7 +18,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <h1 className="text-6xl font-serif font-bold text-text-dark leading-tight">Hello, I'm John Doe</h1>
+          <h1 className="text-6xl font-serif font-semibold text-text-dark leading-tight">Hello, I'm John Doe</h1>
           <h2 className="text-4xl font-serif text-text-medium leading-relaxed">I'm a Full Stack Developer</h2>
           <p className="text-2xl text-text-light leading-relaxed max-w-2xl">
             I specialize in building beautiful, functional, and user-friendly websites and applications. Welcome to my
@@ -35,7 +35,7 @@ export default function Hero() {
         >
           <div className="relative">
             <img
-              src="/placeholder.svg?height=500&width=400"
+              src="images/folders/placeholder.png?height=500&width=400"
               alt="John Doe Profile"
               className="rounded-3xl shadow-2xl w-96 h-auto object-cover"
             />

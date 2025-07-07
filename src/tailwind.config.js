@@ -15,17 +15,23 @@ module.exports = {
     extend: {
       ...defaultConfig.theme.extend,
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
+        serif: ["Crimson Text", "serif"],
       },
       colors: {
         ...defaultConfig.theme.extend.colors,
-        "sidebar-beige": "rgb(101, 85, 70)", // Darker beige for sidebar
-        "content-beige": "rgb(245, 235, 220)", // Lighter beige for content
-        "card-beige": "rgb(235, 225, 210)", // Card background
+        "sidebar-beige": "rgb(85, 70, 55)", // Much darker beige for sidebar
+        "content-beige": "rgb(245, 235, 220)", // Slightly darker beige for content background
+        "card-beige": "rgb(240, 230, 215)", // Card background
         "text-dark": "rgb(40, 35, 30)", // Dark text for light backgrounds
         "text-medium": "rgb(60, 50, 40)", // Medium text
         "text-light": "rgb(80, 65, 50)", // Light text
-        "border-beige": "rgb(200, 185, 170)", // Border color
+        "border-beige": "rgb(220, 210, 195)", // Border color
+        "accent-red": "rgb(180, 50, 50)", // Red for active states
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },

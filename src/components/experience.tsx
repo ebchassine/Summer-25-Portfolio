@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, Building2 } from "lucide-react"
+import { Building2 } from "lucide-react"
 
 export default function Experience() {
   const experiences = [
@@ -9,62 +9,72 @@ export default function Experience() {
       title: "Senior Frontend Developer",
       company: "Tech Solutions Inc.",
       period: "Jan 2021 - Present",
-      logo: "/src/images/icons/tech-solutions.png", // Placeholder path
+      logo: "/src/images/icons/tech-solutions.png",
       description:
-        "Led the development of responsive web applications using React, Next.js, and TypeScript. Implemented state management solutions and optimized performance across multiple projects. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "Led development of responsive web applications using React, Next.js, and TypeScript. Implemented state management solutions and optimized performance.",
     },
     {
       title: "Frontend Developer",
       company: "Digital Innovations",
       period: "Mar 2018 - Dec 2020",
-      logo: "/src/images/icons/digital-innovations.png", // Placeholder path
+      logo: "/src/images/icons/digital-innovations.png",
       description:
-        "Developed and maintained client websites, implemented new features, and collaborated with designers to create engaging user interfaces. Worked extensively with modern JavaScript frameworks and responsive design principles.",
+        "Developed and maintained client websites, implemented new features, and collaborated with designers to create engaging user interfaces.",
     },
     {
       title: "Junior Web Developer",
       company: "Creative Web Agency",
       period: "Jun 2016 - Feb 2018",
-      logo: "/src/images/icons/creative-web.png", // Placeholder path
+      logo: "/src/images/icons/creative-web.png",
       description:
-        "Assisted in the development of websites using HTML, CSS, and JavaScript. Worked on bug fixes and small feature implementations. Gained experience in version control, testing, and deployment processes.",
+        "Assisted in website development using HTML, CSS, and JavaScript. Worked on bug fixes and feature implementations.",
     },
   ]
 
   return (
-    <div className="px-20 py-20 min-h-full">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-6xl font-serif font-bold mb-24 text-text-dark text-center">Experience</h2>
-        <div className="space-y-20">
+    <div style={{ paddingTop: "50vh", paddingLeft: "6rem", paddingRight: "6rem", paddingBottom: "4rem" }}>
+      <div className="max-w-5xl mx-auto">
+        <motion.h2
+          className="text-6xl font-serif font-semibold text-text-dark corner-decoration text-center"
+          style={{ marginBottom: "4rem", transform: "translateY(-50%)" }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: -20 }}
+          transition={{ delay: 0.2 }}
+        >
+          Experience
+        </motion.h2>
+
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="border border-border-beige rounded-3xl p-12 shadow-xl bg-card-beige hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 30 }}
+              className="border border-border-beige rounded-2xl bg-card-beige hover:shadow-xl transition-shadow duration-300"
+              style={{
+                padding: "2rem",
+                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
+              }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index }}
+              transition={{ delay: 0.3 + index * 0.1 }}
             >
-              <div className="flex gap-8">
-                {/* Left side - Company logo and date */}
-                <div className="flex flex-col items-center space-y-4 min-w-[120px]">
-                  <div className="w-20 h-20 bg-sidebar-beige rounded-2xl flex items-center justify-center shadow-lg">
-                    {/* Placeholder for company logo */}
-                    <Building2 className="h-10 w-10 text-content-beige" />
-                    {/* Replace with: <img src={exp.logo || "/placeholder.svg"} alt={exp.company} className="w-16 h-16 object-contain" /> */}
+              <div className="flex" style={{ gap: "2rem" }}>
+                {/* Left side - Company logo */}
+                <div className="flex flex-col items-center min-w-[100px]">
+                  <div className="w-16 h-16 bg-sidebar-beige rounded-xl flex items-center justify-center shadow-md">
+                    <Building2 className="h-8 w-8 text-content-beige" />
                   </div>
-                  <div className="text-center">
-                    <div className="flex items-center text-text-medium text-lg">
-                      <Calendar className="h-5 w-5 mr-2" />
-                    </div>
-                    <p className="text-text-medium text-sm font-medium mt-1">{exp.period}</p>
-                  </div>
+                  <p className="text-text-medium text-sm font-medium mt-2 text-center leading-tight">{exp.period}</p>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="flex-1">
-                  <h3 className="text-4xl font-bold mb-2 text-text-dark">{exp.title}</h3>
-                  <h4 className="text-2xl text-text-medium mb-6 font-medium">{exp.company}</h4>
-                  <p className="text-xl text-text-light leading-relaxed">{exp.description}</p>
+                <div className="flex-1 text-left">
+                  <h3 className="text-2xl font-semibold text-text-dark" style={{ marginBottom: "0.5rem" }}>
+                    {exp.title}
+                  </h3>
+                  <h4 className="text-lg text-text-medium font-medium" style={{ marginBottom: "1rem" }}>
+                    {exp.company}
+                  </h4>
+                  <p className="text-base text-text-light leading-relaxed">{exp.description}</p>
                 </div>
               </div>
             </motion.div>

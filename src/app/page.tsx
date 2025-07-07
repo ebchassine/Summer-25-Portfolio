@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Hero from "@/components/hero"
 import Experience from "@/components/experience"
@@ -10,20 +10,34 @@ import Contact from "@/components/contact"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero")
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const sections = [
-    { id: "home", label:"Home"},
+    { id: "hero", label: "Home" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
-    
   ]
+
+  const handleSectionChange = (newSection: string) => {
+    if (newSection === activeSection) return
+
+    setIsTransitioning(true)
+    setActiveSection(newSection)
+  }
+
+  const handleAnimationComplete = () => {
+    setIsTransitioning(false)
+    // Reset scroll position after the new content has appeared
+    if (contentRef.current) {
+      contentRef.current.scrollTo({ top: 0, behavior: "auto" })
+    }
+  }
 
   const renderContent = () => {
     switch (activeSection) {
-      case "home":
-        return <Hero />
       case "experience":
         return <Experience />
       case "projects":
@@ -41,13 +55,17 @@ export default function Home() {
     <div className="flex h-screen bg-content-beige">
       {/* Left Sidebar - 33% width */}
       <div className="w-1/3 bg-sidebar-beige flex flex-col justify-center items-center sidebar-container">
-        <nav className="space-y-20 text-center">
+        <nav className="text-center" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           {sections.map((section) => (
             <div key={section.id} className="block">
               <button
-                onClick={() => setActiveSection(section.id)}
-                className={`text-7xl font-serif hover:italic text-content-beige block w-full transition-all duration-0 ${
-                  activeSection === section.id ? "font-bold" : "font-normal"
+                onClick={() => handleSectionChange(section.id)}
+                disabled={isTransitioning}
+                style={{
+                  color: activeSection === section.id ? "rgb(180, 50, 50)" : "rgb(0, 0, 0)",
+                }}
+                className={`text-7xl font-serif hover:italic block w-full transition-all duration-50 font-normal hover:opacity-80 ${
+                  isTransitioning ? "pointer-events-none" : ""
                 }`}
               >
                 {section.label}
@@ -58,15 +76,15 @@ export default function Home() {
       </div>
 
       {/* Right Content Area - 67% width */}
-      <div className="w-2/3 bg-content-beige content-container">
-        <AnimatePresence mode="wait">
+      <div ref={contentRef} className="w-2/3 bg-content-beige content-container">
+        <AnimatePresence mode="wait" onExitComplete={handleAnimationComplete}>
           <motion.div
             key={activeSection}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="h-full"
+            className="min-h-full"
           >
             {renderContent()}
           </motion.div>
