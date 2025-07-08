@@ -1,5 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+
+:root {
+  --sidebar-sage: 159 184 173;
+  --content-light: 230 232 230;
+  --content-medium: 206 208 206;
+  --text-onyx: 63 64 63;
+  --text-sage: 71 88 65;
+  --border-gray: 206 208 206;
+  --accent-red: 184 50 50;
+}
 
 * {
   margin: 0;
@@ -37,16 +47,16 @@ body {
 }
 
 .content-container::-webkit-scrollbar-track {
-  background: rgb(235, 225, 210);
+  background: rgb(206, 208, 206);
 }
 
 .content-container::-webkit-scrollbar-thumb {
-  background: rgb(150, 135, 120);
+  background: rgb(159, 184, 173);
   border-radius: 4px;
 }
 
 .content-container::-webkit-scrollbar-thumb:hover {
-  background: rgb(120, 105, 90);
+  background: rgb(71, 88, 65);
 }
 
 /* Corner outline decorations for section headers */
@@ -60,7 +70,7 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  border: 3px solid rgb(85, 70, 55);
+  border: 3px solid rgb(71, 88, 65);
 }
 
 .corner-decoration::before {
@@ -118,4 +128,29 @@ body {
 .sidebar-corner-decoration.active::before,
 .sidebar-corner-decoration.active::after {
   opacity: 1;
+}
+
+/* Fallback styles using RGB values directly */
+.bg-sidebar-sage {
+  background-color: rgb(159, 184, 173) !important;
+}
+
+.bg-content-light {
+  background-color: rgb(230, 232, 230) !important;
+}
+
+.bg-content-medium {
+  background-color: rgb(206, 208, 206) !important;
+}
+
+.text-text-onyx {
+  color: rgb(63, 64, 63) !important;
+}
+
+.text-text-sage {
+  color: rgb(71, 88, 65) !important;
+}
+
+.border-border-gray {
+  border-color: rgb(206, 208, 206) !important;
 }

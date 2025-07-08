@@ -52,9 +52,12 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-screen bg-content-beige">
+    <div className="flex h-screen" style={{ backgroundColor: "rgb(230, 232, 230)" }}>
       {/* Left Sidebar - 33% width */}
-      <div className="w-1/3 bg-sidebar-beige flex flex-col justify-center items-center sidebar-container">
+      <div
+        className="w-1/3 flex flex-col justify-center items-center sidebar-container"
+        style={{ backgroundColor: "rgb(159, 184, 173)" }}
+      >
         <nav className="text-center" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {sections.map((section) => (
             <div key={section.id} className="block">
@@ -62,9 +65,9 @@ export default function Home() {
                 onClick={() => handleSectionChange(section.id)}
                 disabled={isTransitioning}
                 style={{
-                  color: activeSection === section.id ? "rgb(180, 50, 50)" : "rgb(0, 0, 0)",
+                  color: activeSection === section.id ? "rgb(184, 50, 50)" : "rgb(230, 232, 230)",
                 }}
-                className={`text-7xl font-serif hover:italic block w-full transition-all duration-50 font-normal hover:opacity-80 sidebar-corner-decoration ${
+                className={`text-7xl font-serif hover:italic block w-full transition-all duration-300 font-normal hover:opacity-80 sidebar-corner-decoration ${
                   activeSection === section.id ? "active" : ""
                 } ${isTransitioning ? "pointer-events-none" : ""}`}
               >
@@ -76,7 +79,7 @@ export default function Home() {
       </div>
 
       {/* Right Content Area - 67% width */}
-      <div ref={contentRef} className="w-2/3 bg-content-beige content-container">
+      <div ref={contentRef} className="w-2/3 content-container" style={{ backgroundColor: "rgb(230, 232, 230)" }}>
         <AnimatePresence mode="wait" onExitComplete={handleAnimationComplete}>
           <motion.div
             key={activeSection}

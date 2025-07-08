@@ -20,9 +20,13 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <h1 className="text-6xl font-serif font-semibold text-text-dark leading-tight">Hello, I'm John Doe</h1>
-            <h2 className="text-4xl font-serif text-text-medium leading-relaxed">I'm a Full Stack Developer</h2>
-            <p className="text-2xl text-text-light leading-relaxed max-w-2xl">
+            <h1 className="text-6xl font-serif font-semibold leading-tight" style={{ color: "rgb(63, 64, 63)" }}>
+              Hello, I'm John Doe
+            </h1>
+            <h2 className="text-4xl font-serif leading-relaxed" style={{ color: "rgb(71, 88, 65)" }}>
+              I'm a Full Stack Developer
+            </h2>
+            <p className="text-2xl leading-relaxed max-w-2xl" style={{ color: "rgb(63, 64, 63)", opacity: 0.8 }}>
               I specialize in building beautiful, functional, and user-friendly websites and applications. Welcome to my
               portfolio where you can explore my experience, projects, and more.
             </p>
@@ -42,7 +46,10 @@ export default function Hero() {
                 className="rounded-3xl shadow-2xl w-96 h-auto object-cover"
               />
               {/* Decorative element */}
-              <div className="absolute -z-10 top-8 left-8 w-full h-full bg-sidebar-beige rounded-3xl opacity-20"></div>
+              <div
+                className="absolute -z-10 top-8 left-8 w-full h-full rounded-3xl"
+                style={{ backgroundColor: "rgb(159, 184, 173)", opacity: 0.2 }}
+              ></div>
             </div>
           </motion.div>
         </motion.div>

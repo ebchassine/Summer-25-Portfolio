@@ -53,7 +53,7 @@ export default function Contact() {
     <div style={{ paddingTop: "50vh", paddingLeft: "6rem", paddingRight: "6rem", paddingBottom: "4rem" }}>
       <div className="max-w-5xl mx-auto">
         <motion.h2
-          className="text-6xl font-serif font-semibold text-text-dark corner-decoration text-center"
+          className="text-6xl font-serif font-semibold text-text-onyx corner-decoration text-center"
           style={{ marginBottom: "3rem", transform: "translateY(-50%)" }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: -20 }}
@@ -63,7 +63,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.p
-          className="text-2xl text-text-light leading-relaxed max-w-3xl mx-auto text-center"
+          className="text-2xl text-text-onyx leading-relaxed max-w-3xl mx-auto text-center opacity-80"
           style={{ marginBottom: "4rem" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,14 +78,14 @@ export default function Contact() {
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center p-6 bg-card-beige rounded-2xl shadow-lg"
+              className="flex flex-col items-center p-6 bg-content-medium rounded-2xl shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.1 }}
             >
-              <info.icon className="h-8 w-8 text-sidebar-beige mb-3" />
-              <h3 className="text-xl font-medium text-text-dark mb-2">{info.label}</h3>
-              <p className="text-lg text-text-medium">{info.value}</p>
+              <info.icon className="h-8 w-8 text-sidebar-sage mb-3" />
+              <h3 className="text-xl font-medium text-text-onyx mb-2">{info.label}</h3>
+              <p className="text-lg text-text-sage">{info.value}</p>
             </motion.div>
           ))}
         </div>
@@ -98,13 +98,13 @@ export default function Contact() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 bg-card-beige rounded-2xl hover:bg-border-beige transition-all duration-300 border border-border-beige shadow-lg hover:shadow-xl"
+              className="p-6 bg-content-medium rounded-2xl hover:bg-border-gray transition-all duration-300 border border-border-gray shadow-lg hover:shadow-xl"
               whileHover={{ y: -5, scale: 1.05 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + index * 0.1 }}
             >
-              <div className="text-text-medium">{social.icon}</div>
+              <div className="text-text-sage">{social.icon}</div>
               <span className="sr-only">{social.name}</span>
             </motion.a>
           ))}

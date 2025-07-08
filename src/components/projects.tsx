@@ -9,7 +9,7 @@ export default function Projects() {
       title: "E-commerce Platform",
       description:
         "Full-featured online store with Next.js and Stripe integration. Features user authentication, product catalog, and secure payment processing.",
-      image:  "images/folders/placeholder.png??height=400&width=600",
+      image: "/placeholder.svg?height=400&width=600",
       technologies: ["Next.js", "React", "Stripe", "TypeScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -18,7 +18,7 @@ export default function Projects() {
       title: "Task Management App",
       description:
         "Productivity application with drag-and-drop interface. Includes project organization, team collaboration, and real-time updates.",
-      image:  "images/folders/placeholder.png?height=400&width=600",
+      image: "/placeholder.svg?height=400&width=600",
       technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
       liveUrl: "#",
       githubUrl: "#",
@@ -27,7 +27,7 @@ export default function Projects() {
       title: "Portfolio Website",
       description:
         "Responsive portfolio template for creative professionals. Built with modern web technologies and optimized for performance.",
-      image:  "images/folders/placeholder.png?height=400&width=600",
+      image: "/placeholder.svg?height=400&width=600",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
       liveUrl: "#",
       githubUrl: "#",
@@ -38,7 +38,7 @@ export default function Projects() {
     <div style={{ paddingTop: "50vh", paddingLeft: "6rem", paddingRight: "6rem", paddingBottom: "4rem" }}>
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-6xl font-serif font-semibold text-text-dark corner-decoration text-center"
+          className="text-6xl font-serif font-semibold text-text-onyx corner-decoration text-center"
           style={{ marginBottom: "4rem", transform: "translateY(-50%)" }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: -20 }}
@@ -53,7 +53,7 @@ export default function Projects() {
               key={index}
               className="relative rounded-2xl overflow-hidden group hover:shadow-xl transition-all duration-500 h-80"
               style={{
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
+                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

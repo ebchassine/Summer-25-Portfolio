@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require("shadcn/ui/tailwind.config")
+const defaultConfig = require("shadcn/ui/tailwind-config")
 
 module.exports = {
   ...defaultConfig,
@@ -19,14 +19,13 @@ module.exports = {
       },
       colors: {
         ...defaultConfig.theme.extend.colors,
-        "sidebar-beige": "rgb(85, 70, 55)", // Much darker beige for sidebar
-        "content-beige": "rgb(245, 235, 220)", // Slightly darker beige for content background
-        "card-beige": "rgb(240, 230, 215)", // Card background
-        "text-dark": "rgb(40, 35, 30)", // Dark text for light backgrounds
-        "text-medium": "rgb(60, 50, 40)", // Medium text
-        "text-light": "rgb(80, 65, 50)", // Light text
-        "border-beige": "rgb(220, 210, 195)", // Border color
-        "accent-red": "rgb(180, 50, 50)", // Red for active states
+        "sidebar-sage": "rgb(159, 184, 173)",
+        "content-light": "rgb(230, 232, 230)",
+        "content-medium": "rgb(206, 208, 206)",
+        "text-onyx": "rgb(63, 64, 63)",
+        "text-sage": "rgb(71, 88, 65)",
+        "border-gray": "rgb(206, 208, 206)",
+        "accent-red": "rgb(184, 50, 50)",
       },
       borderRadius: {
         lg: "var(--radius)",
